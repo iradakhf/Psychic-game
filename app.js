@@ -11,13 +11,12 @@ function generateRandomAnswer(){
     let randomLetterIndex = Math.floor(Math.random() * letters.length);
     return letters[randomLetterIndex];
   }
-  
+  var computerGuess = generateRandomAnswer();
   function start(){
     guessesLeft=10; 
     document.getElementById("usersGuess").innerHTML = " ";
-    generateRandomAnswer();
+   computerGuess= generateRandomAnswer();
   }
-  var computerGuess = generateRandomAnswer();
 window.addEventListener("keyup", function(e){
   
   if(letters.includes(e.key)){
