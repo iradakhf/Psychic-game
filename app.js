@@ -12,14 +12,16 @@ function generateRandomAnswer(){
     return letters[randomLetterIndex];
   }
   
-var computerGuess = generateRandomAnswer();
-function start(){
-  guessesLeft=10; 
-}
+  function start(){
+    guessesLeft=10; 
+    document.getElementById("usersGuess").innerHTML = " ";
+    generateRandomAnswer();
+  }
+  var computerGuess = generateRandomAnswer();
 window.addEventListener("keyup", function(e){
   
   if(letters.includes(e.key)){
-    var userguess = document.getElementById("usersGuess").innerHTML;
+     userguess = document.getElementById("usersGuess").innerHTML;
     if(userguess.includes(e.key)){
       this.alert(`${e.key} is already guessed`)
     }
